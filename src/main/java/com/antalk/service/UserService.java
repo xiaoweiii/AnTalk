@@ -1,6 +1,10 @@
 package com.antalk.service;
 
+import com.antalk.common.lang.Result;
 import com.antalk.entity.User;
+
+import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * @InterfaceName UserService
@@ -11,10 +15,11 @@ import com.antalk.entity.User;
 
 
 public interface UserService {
-    void addUser(String username, String password);
 
     User findUserById(long id);
 
     User findUserByName(String username);
+
+    Result register(String username, String password);
 
 }

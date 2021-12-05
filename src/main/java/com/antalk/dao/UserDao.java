@@ -15,12 +15,12 @@ import org.springframework.stereotype.Repository;
 public interface UserDao {
 
     //根据用户名和密码增加一个用户
-    @Insert("INSERT INTO user(username, password) values (#{username}, #{password})")
-    void insertUser(@Param("username") String username, @Param("password") String password);
+    @Insert("INSERT INTO user(uname, password) values (#{uname}, #{password})")
+    void insertUser(@Param("uname") String uname, @Param("password") String password);
 
     //根据用户名搜索用户是否存在
-    @Select("SELECT * FROM user WHERE username = #{username}")
-    User findUserByName(@Param("username") String username);
+    @Select("SELECT * FROM user WHERE uname = #{uname}")
+    User findUserByName(@Param("uname") String uname);
 
     //根据id查询用户
     @Select("SELECT * FROM user WHERE userId = #{userId}")

@@ -8,9 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 /**
  * @Classname RegisterController
- * @Description TODO
+ * @Description 注册控制器
  * @Date 2021/11/30 14:30
  * @Created by luowenwei
  */
@@ -23,23 +26,12 @@ public class RegisterController {
 
     @PostMapping("/register")
     public Result register(@Validated @RequestBody UserDto userDto){
-        User u = userService.findUserByName(userDto.getUsername());
-        if(u != null){
-            return Result.fail(200, "用户已存在", null);
-        }
-        userService.addUser(userDto.getUsername(), userDto.getPassword());
-        return Result.succ(null);
+        return userService.register(userDto.getUsername(), userDto.getPassword());
     }
 
-    @PostMapping("/login")
-    public Result login(@Validated @RequestBody UserDto userDto){
-        User u = userService.findUserByName(userDto.getUsername());
-        if(u == null){
-            return Result.fail(200, "用户不存在", null);
-        }
-        if(!userDto.getPassword().equals(u.getPassword())){
-            return Result.fail("密码错误");
-        }
-        return Result.succ(200, "登录成功", null);
+    public static void main(String[] args) {
+        Date date=new Date();
+        Timestamp timeStamp = new Timestamp(date.getTime());
+        System.out.println(timeStamp);
     }
 }

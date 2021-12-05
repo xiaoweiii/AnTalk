@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 public class User {
 
-    private long userId;
-    private String username;
+    private int uid;
+    private String uname;
     private String password;
 }
