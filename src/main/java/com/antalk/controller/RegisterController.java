@@ -1,8 +1,7 @@
-package com.antalk.Controller;
+package com.antalk.controller;
 
 import com.antalk.common.lang.Result;
 import com.antalk.common.dto.UserDto;
-import com.antalk.entity.User;
 import com.antalk.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;

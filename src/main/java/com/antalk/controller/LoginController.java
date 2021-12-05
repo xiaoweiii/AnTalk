@@ -1,4 +1,4 @@
-package com.antalk.Controller;
+package com.antalk.controller;
 
 import com.antalk.common.dto.UserDto;
 import com.antalk.common.lang.Result;
