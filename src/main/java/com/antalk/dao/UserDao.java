@@ -24,5 +24,5 @@ public interface UserDao {
 
     //根据id查询用户
     @Select("SELECT * FROM user WHERE userId = #{userId}")
-    User findUserById(@Param("userId") long userId);
+    User findUserById(@Param("userId") Integer userId);
 }

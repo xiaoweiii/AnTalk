@@ -12,9 +12,9 @@ import java.util.Date;
  */
 @Data
 public class UserInfo {
-    private int uInfo_id;
-    private int uid;
-    private int follow_uid;
-    private int fans_uid;
+    private Integer uInfo_id;
+    private Integer uid;
+    private Integer follow_uid;
+    private Integer fans_uid;
     private Date register_time;
 }

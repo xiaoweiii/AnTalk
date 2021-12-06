@@ -8,13 +8,11 @@ import com.antalk.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.sql.Timestamp;
 import java.util.Date;
 
 /**
  * @Classname UserServiceImpl
- * @Description TODO
+ * @Description 用户业务接口实现
  * @Date 2021/11/30 15:24
  * @Created by luowenwei
  */
@@ -27,7 +25,7 @@ public class UserServiceImpl implements UserService {
     private UserInfoDao userInfoDao;
 
     @Override
-    public User findUserById(long id) {
+    public User findUserById(Integer id) {
         User user = userDao.findUserById(id);
         return user;
     }
@@ -48,7 +46,6 @@ public class UserServiceImpl implements UserService {
         userDao.insertUser(username, password);
         u = userDao.findUserByName(username);
         Date date = new Date();
-//        Timestamp timestamp = new Timestamp(date.getTime());
         userInfoDao.setRegisterTime(u.getUid(), date);
         return Result.succ(null);
     }

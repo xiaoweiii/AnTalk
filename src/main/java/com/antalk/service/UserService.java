@@ -3,12 +3,9 @@ package com.antalk.service;
 import com.antalk.common.lang.Result;
 import com.antalk.entity.User;
 
-import java.sql.Timestamp;
-import java.util.Date;
-
 /**
  * @InterfaceName UserService
- * @Description TODO
+ * @Description 用户业务接口
  * @Date 2021/11/30 13:54
  * @Created by luowenwei
  */
@@ -16,7 +13,7 @@ import java.util.Date;
 
 public interface UserService {
 
-    User findUserById(long id);
+    User findUserById(Integer id);
 
     User findUserByName(String username);
 
